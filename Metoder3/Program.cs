@@ -7,7 +7,6 @@ namespace Metoder3
     {
         static void Main(string[] args)
         {
-            int[] tal = new int[3];
             Console.WriteLine("1. Addera tre tal");
             Console.WriteLine("2. Största talet av två tal");
             Console.WriteLine("3. Avsluta programmet");
@@ -16,24 +15,36 @@ namespace Metoder3
             switch (meny)
             {
                 case "1":
-                    for (int i = 0; i < 3; i++)
-                    {
-                        Console.Write("Skriv in ett tal: ");
-                        tal[i] = int.Parse(Console.ReadLine());
-                    }
-                    Console.WriteLine(Addera(tal[0], tal[1], tal[2]));
+                    MenyvalAddera();
                     break;
                 case "2":
-                    for (int i = 0;i < 2; i++)
-                    {
-                        Console.Write("Skriv in ett tal: ");
-                        tal[i] = int.Parse(Console.ReadLine());
-                    }
-                    Console.WriteLine(störst(tal[0], tal[1]));
+                    MenyvalStörstaTalet();
                     break;
                 case "3":
                     break;
             }
+        }
+
+        static void MenyvalAddera()
+        {
+            int[] tal = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Skriv in ett tal: ");
+                tal[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine(Addera(tal[0], tal[1], tal[2]));
+        }
+
+        static void MenyvalStörstaTalet()
+        {
+            int[] tal = new int[2];
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("Skriv in ett tal: ");
+                tal[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine(störst(tal[0], tal[1]));
         }
 
         static int Addera(int tal1, int tal2, int tal3)
